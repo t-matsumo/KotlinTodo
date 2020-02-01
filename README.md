@@ -7,7 +7,7 @@
 
 # TODO for TDD
 - [x] Create todo data class.
-- [ ] Crate todo view with layout resource.
+- [x] Crate todo view with layout resource.
 - [ ] Crate todo List with fragment.
 - [ ] Create todo list presenter.
 - [ ] Crate todo list Activity with mock data.
