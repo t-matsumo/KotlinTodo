@@ -1,13 +1,13 @@
-package com.gmail.tatsukimatsumo.kotlintodo.todolist
+package com.gmail.tatsukimatsumo.kotlintodo.tasks
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.gmail.tatsukimatsumo.kotlintodo.R
 
-class TodoListActivity : AppCompatActivity() {
+class TasksActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_todo_list)
+        setContentView(R.layout.activity_tasks)
     }
 }
