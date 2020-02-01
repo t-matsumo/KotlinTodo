@@ -1,13 +1,20 @@
 package com.gmail.tatsukimatsumo.kotlintodo.data
 
-import org.junit.Assert.assertEquals
-import org.junit.Assert.assertNotEquals
+import android.os.Parcel
+import android.os.Parcelable
+import org.junit.Assert.*
+import org.junit.Before
 import org.junit.Test
 
 class TaskTest {
     private val titleString = "title"
     private val taskString = "task"
-    private val task = Task(titleString, taskString)
+    private lateinit var task: Task
+
+    @Before
+    fun setup() {
+        task = Task(titleString, taskString)
+    }
 
     @Test
     fun testSetCollectData() {
@@ -21,5 +28,10 @@ class TaskTest {
         assertNotEquals(Task(titleString, "not same task"), task)
         assertNotEquals(Task("not same title", taskString), task)
         assertNotEquals(Task("not same title", "not same task"), task)
+    }
+
+    @Test
+    fun testDataIsParcerable() {
+        assertTrue(task is Parcelable)
     }
 }

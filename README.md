@@ -9,6 +9,15 @@
 - [x] Create todo data class.
 - [x] Crate todo view with layout resource.
 - [ ] Crate todo List with fragment.
+    - [x] create class.
+    - [x] implement task data to parcelable. 
+    - [x] implement writeToParcel (cannnot test).
+    - [x] implement  describeContents (cannnot test).
+    - [x] Implement CREATOR (cannnot test).
+    - [x] pass task data (cannot test??).
+- [ ] Create TaskList
+    - [] apply to fragment.
+- [ ] Create todo list layout
 - [ ] Create todo list presenter.
 - [ ] Crate todo list Activity with mock data.
 - [ ] Save data to sqlite.
