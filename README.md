@@ -6,7 +6,7 @@
 - [ ] Use Android Jetpack (Room, LiveData, ViewModel, navigation, ...).
 
 # TODO for TDD
-- [ ] Create todo data class.
+- [x] Create todo data class.
 - [ ] Crate todo view with layout resource.
 - [ ] Crate todo List with fragment.
 - [ ] Create todo list presenter.
