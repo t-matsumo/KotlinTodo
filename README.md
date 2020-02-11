@@ -9,13 +9,10 @@
 - [x] Create todo data class.
 - [x] Crate todo view with layout resource.
 - [x] Crate todo List with fragment.
-    - [x] create class.
-    - [x] implement task data to parcelable. 
-    - [x] implement writeToParcel (cannnot test).
-    - [x] implement  describeContents (cannnot test).
-    - [x] Implement CREATOR (cannnot test).
-    - [x] pass task data (cannot test??).
 - [x] Create todo list layout
+-----一旦TDDあきらめ...(Functional Programmingにしないとほとんどテストできない...)---
+- [ ] pass Presenter by dependency injection. 
+- [ ] Create adapter for list.
 - [ ] Create todo list presenter.
 - [ ] Create TaskList
     - [] apply to fragment.

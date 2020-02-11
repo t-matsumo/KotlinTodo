@@ -17,9 +17,9 @@ data class Task(val title: String, val task: String) : Parcelable {
         @Suppress("unused")
         @JvmField
         val CREATOR: Parcelable.Creator<Task> = object: Parcelable.Creator<Task> {
-            override fun createFromParcel(source: Parcel?): Task {
-                val title = source!!.readString()!!
-                val task = source!!.readString()!!
+            override fun createFromParcel(source: Parcel): Task {
+                val title = source.readString()!!
+                val task = source.readString()!!
                 return Task(title, task)
             }
 
