@@ -21,6 +21,7 @@ class TasksFragment : Fragment(), TasksContract.View {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
+
         if (context is TasksFragmentListener) {
             listener = context
         } else {
@@ -33,17 +34,15 @@ class TasksFragment : Fragment(), TasksContract.View {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_tasks, container, false)
-        if (view is RecyclerView) {
-            view.apply {
+        return inflater.inflate(R.layout.fragment_tasks, container, false)
+            ?.let { if (it is RecyclerView) it else null }
+            ?.apply {
                 layoutManager = LinearLayoutManager(context)
                 adapter = ItemAdapter(arrayOf(
                     Task("aa", "aa"),
                     Task("bb", "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"),
                     Task("cc", "cc")))
             }
-        }
-        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -73,9 +72,9 @@ class TasksFragment : Fragment(), TasksContract.View {
         override fun onCreateViewHolder(parent: ViewGroup,
                                         viewType: Int): ItemAdapter.MyViewHolder {
             // create a new view
-            val taskLayout = LayoutInflater.from(parent.context)
+            return LayoutInflater.from(parent.context)
                 .inflate(R.layout.layout_task, parent, false)
-            return MyViewHolder(taskLayout, taskLayout.title, taskLayout.task)
+                .let { MyViewHolder(it, it.title, it.task) }
         }
 
         // Replace the contents of a view (invoked by the layout manager)
